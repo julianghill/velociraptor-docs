@@ -1,7 +1,11 @@
 ---
 title: Windows.Registry.PuttyHostKeys
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact extracts PuTTY SSH host keys.
 ---
 
 This artifact extracts PuTTY SSH host keys.

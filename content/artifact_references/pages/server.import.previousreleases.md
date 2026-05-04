@@ -1,7 +1,12 @@
 ---
 title: Server.Import.PreviousReleases
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  When upgrading the Velociraptor server, the built-in artifacts may change and
+  use newer VQL features that are not present in older clients.
 ---
 
 When upgrading the Velociraptor server, the built-in artifacts may change and
@@ -44,11 +49,12 @@ parameters:
     description: |
       The Velociraptor Release to import.
     type: choices
-    default: v0.74
+    default: v0.75
     choices:
       - v0.72
       - v0.73
       - v0.74
+      - v0.75
 
 sources:
   - query: |

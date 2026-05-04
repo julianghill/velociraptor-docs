@@ -1,5 +1,14 @@
 [
     {
+        "title": "ADX.Flows.Upload",
+        "description": "This server side event monitoring artifact waits for new artifacts\nto be collected from endpoints and automatically uploads those to an\nAzure Data Explorer (ADX) cluster.",
+        "link": "/artifact_references/pages/adx.flows.upload",
+        "type": "server_event",
+        "tags": [
+            "Server Event Artifact"
+        ]
+    },
+    {
         "title": "Admin.Client.Remove",
         "description": "This artifact will remove clients that have not checked in for a\nwhile.  All data for these clients will be removed.",
         "link": "/artifact_references/pages/admin.client.remove",
@@ -199,7 +208,7 @@
     },
     {
         "title": "Generic.Client.Stats",
-        "description": "An Event artifact which generates client's CPU and memory statistics.",
+        "description": "An Event artifact which records client's CPU and memory\nstatistics.",
         "link": "/artifact_references/pages/generic.client.stats",
         "type": "client_event",
         "tags": [
@@ -369,6 +378,15 @@
         ]
     },
     {
+        "title": "Generic.Utils.Crypto",
+        "description": "A utility artifact to provide helpful utility functions.",
+        "link": "/artifact_references/pages/generic.utils.crypto",
+        "type": "client",
+        "tags": [
+            "Client Artifact"
+        ]
+    },
+    {
         "title": "Generic.Utils.DeadDiskRemapping",
         "description": "Calculate a remapping configuration from a dead disk image.",
         "link": "/artifact_references/pages/generic.utils.deaddiskremapping",
@@ -442,7 +460,7 @@
     },
     {
         "title": "Linux.Debian.Packages",
-        "description": "List all packages installed on the system, both deb packages and \"snaps\".\nThe installed deb package information is fetched from the DPKG status file,\nwhile the snap package list is fetched from the snap daemon through a UNIX\nsocket HTTP call (since detailed snap package information is not easily\nin files).",
+        "description": "List all packages installed on the system, both deb packages and \"snaps\".",
         "link": "/artifact_references/pages/linux.debian.packages",
         "type": "client",
         "tags": [
@@ -1314,8 +1332,17 @@
         ]
     },
     {
+        "title": "Server.Import.ArtifactBundle",
+        "description": "Imports a zipped package containing Velociraptor artifacts from a\nremote web server.",
+        "link": "/artifact_references/pages/server.import.artifactbundle",
+        "type": "server",
+        "tags": [
+            "Server Artifact"
+        ]
+    },
+    {
         "title": "Server.Import.ArtifactExchange",
-        "description": "This artifact will automatically import the latest artifact\nexchange bundle into the current server.",
+        "description": "Imports a zipped package containing Velociraptor artifacts from a\nremote web server.",
         "link": "/artifact_references/pages/server.import.artifactexchange",
         "type": "server",
         "tags": [
@@ -1335,15 +1362,6 @@
         "title": "Server.Import.PreviousReleases",
         "description": "When upgrading the Velociraptor server, the built-in artifacts may change and\nuse newer VQL features that are not present in older clients.",
         "link": "/artifact_references/pages/server.import.previousreleases",
-        "type": "server",
-        "tags": [
-            "Server Artifact"
-        ]
-    },
-    {
-        "title": "Server.Information.Clients",
-        "description": "This artifact returns the total list of clients, their hostnames and\nthe last times they were seen.\n",
-        "link": "/artifact_references/pages/server.information.clients",
         "type": "server",
         "tags": [
             "Server Artifact"
@@ -1405,11 +1423,11 @@
     },
     {
         "title": "Server.Internal.ClientInfo",
-        "description": "An internal artifact collecting client information. This is used to\nupdate the client info indexes. Client send this automatically at\nstartup and then every day.\n",
+        "description": "An internal artifact collecting client information. This is used to\nupdate the client info indexes. Clients send this automatically at\nstartup and then every day.",
         "link": "/artifact_references/pages/server.internal.clientinfo",
-        "type": "internal",
+        "type": "client_event",
         "tags": [
-            "Internal Artifact"
+            "Client Event Artifact"
         ]
     },
     {
@@ -1449,26 +1467,8 @@
         ]
     },
     {
-        "title": "Server.Internal.Enrollment",
-        "description": "This event artifact is an internal event stream over which client\nenrollments are sent. You can watch this event queue to be notified\non any new clients enrolling for the first time.",
-        "link": "/artifact_references/pages/server.internal.enrollment",
-        "type": "internal",
-        "tags": [
-            "Internal Artifact"
-        ]
-    },
-    {
-        "title": "Server.Internal.FrontendMetrics",
-        "description": "An internal queue that receives metrics from all frontends. The\nmaster Frontend manager service will aggregate these into a combined\nmetric stream.\n",
-        "link": "/artifact_references/pages/server.internal.frontendmetrics",
-        "type": "internal",
-        "tags": [
-            "Internal Artifact"
-        ]
-    },
-    {
         "title": "Server.Internal.HuntModification",
-        "description": "An internal queue to watch modifications of hunts. The hunt\ndispatcher from all nodes sends this mutation to the hunt manager\nwhich applies it.\n",
+        "description": "An internal queue to watch modifications of hunts. The hunt\ndispatcher from all nodes sends this mutation to the hunt manager\nwhich applies it.",
         "link": "/artifact_references/pages/server.internal.huntmodification",
         "type": "internal",
         "tags": [
@@ -1477,7 +1477,7 @@
     },
     {
         "title": "Server.Internal.HuntUpdate",
-        "description": "An internal queue to notify hunt dispatchers on all minions that a\ncertain hunt has changed and should be updated from the internal\ncache.\n",
+        "description": "An internal queue to notify hunt dispatchers on all minions that a\ncertain hunt has changed and should be updated from the internal\ncache.",
         "link": "/artifact_references/pages/server.internal.huntupdate",
         "type": "internal",
         "tags": [
@@ -1512,15 +1512,6 @@
         ]
     },
     {
-        "title": "Server.Internal.Label",
-        "description": "An internal artifact used to track new labeling events.\n",
-        "link": "/artifact_references/pages/server.internal.label",
-        "type": "internal",
-        "tags": [
-            "Internal Artifact"
-        ]
-    },
-    {
         "title": "Server.Internal.MasterRegistrations",
         "description": "The master will advertise to the minions the events it is interested\nin.\n",
         "link": "/artifact_references/pages/server.internal.masterregistrations",
@@ -1539,48 +1530,12 @@
         ]
     },
     {
-        "title": "Server.Internal.Notifications",
-        "description": "This event artifact is an internal event stream over which client\nnotifications are sent. A frontend will watch for events over this\nstream and if a client is actively connected to this frontend, the\nclient will be notified that new work is available to it.",
-        "link": "/artifact_references/pages/server.internal.notifications",
-        "type": "internal",
-        "tags": [
-            "Internal Artifact"
-        ]
-    },
-    {
-        "title": "Server.Internal.Ping",
-        "description": "An internal queue for Ping requests. The queue is watched by the\nreplication service on the slave nodes which will notify the target\nspecified.\n",
-        "link": "/artifact_references/pages/server.internal.ping",
-        "type": "internal",
-        "tags": [
-            "Internal Artifact"
-        ]
-    },
-    {
-        "title": "Server.Internal.Pong",
-        "description": "An internal queue for Ping replies\n",
-        "link": "/artifact_references/pages/server.internal.pong",
-        "type": "internal",
-        "tags": [
-            "Internal Artifact"
-        ]
-    },
-    {
         "title": "Server.Internal.ResumedUploads",
         "description": "An internal artifact that display all resumed uploads\n",
         "link": "/artifact_references/pages/server.internal.resumeduploads",
         "type": "client",
         "tags": [
             "Client Artifact"
-        ]
-    },
-    {
-        "title": "Server.Internal.TimelineAdd",
-        "description": "This artifact will fire whenever a timeline is added to a super\ntimeline. You can use this to monitor for users adding timelines and\nforward them to an external timeline system (e.g. TimeSketch)\n",
-        "link": "/artifact_references/pages/server.internal.timelineadd",
-        "type": "server_event",
-        "tags": [
-            "Server Event Artifact"
         ]
     },
     {
@@ -1665,6 +1620,15 @@
         ]
     },
     {
+        "title": "Server.Monitoring.RSSFeeds",
+        "description": "Monitor RSS feeds for changes.",
+        "link": "/artifact_references/pages/server.monitoring.rssfeeds",
+        "type": "server_event",
+        "tags": [
+            "Server Event Artifact"
+        ]
+    },
+    {
         "title": "Server.Monitoring.ScheduleHunt",
         "description": "Run client interrogation periodically. This is a sample event\nartifact to schedule a hunt periodically. You can change it to\nlaunch other artifacts.\n",
         "link": "/artifact_references/pages/server.monitoring.schedulehunt",
@@ -1737,6 +1701,15 @@
         ]
     },
     {
+        "title": "Server.Utils.ArtifactVerifier",
+        "description": "Verify a set of artifacts and returns results in a structured way.",
+        "link": "/artifact_references/pages/server.utils.artifactverifier",
+        "type": "server",
+        "tags": [
+            "Server Artifact"
+        ]
+    },
+    {
         "title": "Server.Utils.BackupDirectory",
         "description": "This server monitoring artifact will automatically export and\nbackup selected collected artifacts to a directory on the server.\n",
         "link": "/artifact_references/pages/server.utils.backupdirectory",
@@ -1770,6 +1743,15 @@
         "type": "server",
         "tags": [
             "Server Artifact"
+        ]
+    },
+    {
+        "title": "Server.Utils.Clients",
+        "description": "View detailed client informations",
+        "link": "/artifact_references/pages/server.utils.clients",
+        "type": "notebook",
+        "tags": [
+            "notebook"
         ]
     },
     {
@@ -1881,6 +1863,15 @@
         ]
     },
     {
+        "title": "Server.Utils.ExportHunt",
+        "description": "Export a hunt to a Zip download.",
+        "link": "/artifact_references/pages/server.utils.exporthunt",
+        "type": "server",
+        "tags": [
+            "Server Artifact"
+        ]
+    },
+    {
         "title": "Server.Utils.ImportCollection",
         "description": "The Velociraptor offline collector is an automated, preconfigured\ncollection tool. Users can use the collector to automatically\ncollect any artifacts on endpoints that do not have the Velociraptor\nclient (offline endpoints).",
         "link": "/artifact_references/pages/server.utils.importcollection",
@@ -1981,7 +1972,7 @@
     },
     {
         "title": "System.Flow.Completion",
-        "description": "An internal artifact that produces events for every flow completion\nin the system.\n",
+        "description": "An internal artifact that produces events for every flow completion\nin the system. This also includes when importing an offline\ncollection.",
         "link": "/artifact_references/pages/system.flow.completion",
         "type": "client_event",
         "tags": [
@@ -2007,17 +1998,8 @@
         ]
     },
     {
-        "title": "System.Hunt.Participation",
-        "description": "Endpoints may participate in hunts. This artifact collects which\nhunt each system participated in.\n",
-        "link": "/artifact_references/pages/system.hunt.participation",
-        "type": "internal",
-        "tags": [
-            "Internal Artifact"
-        ]
-    },
-    {
         "title": "System.Upload.Completion",
-        "description": "An internal artifact that produces events for every file that is\nuploaded to the system.\n",
+        "description": "An internal artifact that produces events for every file that is\nuploaded to the system. This also includes when importing an offline\ncollection.",
         "link": "/artifact_references/pages/system.upload.completion",
         "type": "client_event",
         "tags": [
@@ -2269,7 +2251,7 @@
     },
     {
         "title": "Windows.Collectors.Remapping",
-        "description": "Calculate a remapping file for a collection zip.",
+        "description": "Calculates a remapping config for a collection container (zip).",
         "link": "/artifact_references/pages/windows.collectors.remapping",
         "type": "server",
         "tags": [
@@ -2773,7 +2755,7 @@
     },
     {
         "title": "Windows.Events.Mutants",
-        "description": "This artifact detects creation of Mutants and triggers an alert. \n",
+        "description": "This artifact detects creation of Mutants and triggers an alert.\n",
         "link": "/artifact_references/pages/windows.events.mutants",
         "type": "client_event",
         "tags": [
@@ -2832,6 +2814,15 @@
         "type": "client_event",
         "tags": [
             "Client Event Artifact"
+        ]
+    },
+    {
+        "title": "Windows.Forensics.Amcache",
+        "description": "The Amcache.hve is a registry artifact that stores metadata\nused by the OS\u2019s application compatibility infrastructure to \nrecord metadata about binaries present on the system. This \nincludes file paths, hashes, timestamps, and install/interaction \ninformation for executables and drivers. ",
+        "link": "/artifact_references/pages/windows.forensics.amcache",
+        "type": "client",
+        "tags": [
+            "Client Artifact"
         ]
     },
     {
@@ -3034,7 +3025,7 @@
     },
     {
         "title": "Windows.KapeFiles.Extract",
-        "description": "The Windows.KapeFiles.Targets artifact collects files into a Zip\nfile. Zip files cannot generally preserve timestamps since they\nonly have a single timestamp concept. Velociraptor will only record\nthe modified time in the zip file header itself but all the times\nare present in the metadata file:",
+        "description": "Extracts file collected by the `Windows.KapeFiles.Targets` or\n`Windows.Triage.Targets` artifacts. and restores the original\ntimestamps on the extracted files.",
         "link": "/artifact_references/pages/windows.kapefiles.extract",
         "type": "server",
         "tags": [
@@ -3043,7 +3034,7 @@
     },
     {
         "title": "Windows.KapeFiles.Remapping",
-        "description": "This artifact automates the rebuilding of remapping rules to be able to\neasily post-process the results of the Windows.KapeFiles.Targets.",
+        "description": "Automates the creation of remapping rules to enable post-processing file\nuploads collected by the `Windows.KapeFiles.Targets` or\n`Windows.Triage.Targets` artifacts.",
         "link": "/artifact_references/pages/windows.kapefiles.remapping",
         "type": "client",
         "tags": [
@@ -3606,15 +3597,6 @@
         "type": "client_event",
         "tags": [
             "Client Event Artifact"
-        ]
-    },
-    {
-        "title": "Windows.System.Amcache",
-        "description": "Get information from the system's amcache.",
-        "link": "/artifact_references/pages/windows.system.amcache",
-        "type": "client",
-        "tags": [
-            "Client Artifact"
         ]
     },
     {

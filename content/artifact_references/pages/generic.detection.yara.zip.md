@@ -1,7 +1,11 @@
 ---
 title: Generic.Detection.Yara.Zip
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact enables running YARA on embedded compressed files.
 ---
 
 This artifact enables running YARA on embedded compressed files.

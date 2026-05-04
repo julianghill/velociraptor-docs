@@ -6,6 +6,9 @@ last_reviewed: 2025-07-06
 draft: false
 weight: 50
 summary: "Create a deaddisk configuration"
+description: |
+  Create a deaddisk configuration (remapping) file, which can then be used to run
+  a virtual client with the `--remap` flag.
 ---
 
 Create a deaddisk configuration (remapping) file, which can then be used to run
@@ -95,6 +98,6 @@ without overriding the built-in artifact.
 {{% /notice %}}
 
 See
-[Dead Disk Analysis]({{< ref "/docs/forensic/deaddisk/" >}})
+[Dead Disk Analysis](/docs/forensic/deaddisk/)
 for more information.
 

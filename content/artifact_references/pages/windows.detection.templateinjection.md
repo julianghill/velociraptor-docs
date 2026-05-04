@@ -1,7 +1,11 @@
 ---
 title: Windows.Detection.TemplateInjection
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Detects injected templates in Office and RTF documents.
 ---
 
 Detects injected templates in Office and RTF documents.
@@ -153,7 +157,7 @@ sources:
             })
 
       -- parse settings file by line and extract config
-      LET template = SELECT * FROM foreach(row=document_parts,
+      LET Template = SELECT * FROM foreach(row=document_parts,
         query={
             SELECT
                 OSPath as SectionPath,
@@ -174,7 +178,7 @@ sources:
       LET hits = SELECT * FROM chain(
         rtf = { SELECT * FROM rtf_injection },
         office = {
-            SELECT * FROM foreach(row=template,
+            SELECT * FROM foreach(row=Template,
                 query={
                     SELECT
                         OSPath AS DocumentPath,

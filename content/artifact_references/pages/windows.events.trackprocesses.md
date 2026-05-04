@@ -1,7 +1,12 @@
 ---
 title: Windows.Events.TrackProcesses
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Event Artifact]
+description: |
+  Uses Sysmon and pslist to keep track of running processes by using the
+  Velociraptor Process Tracker.
 ---
 
 Uses Sysmon and pslist to keep track of running processes by using the
@@ -56,6 +61,11 @@ parameters:
   - name: AddEnrichments
     type: bool
     description: Add process information enrichments (can use more resources)
+
+  - name: PROCESS_TRACKER_CACHE
+    default: '%TEMP%/processes.sqlite'
+    description: |
+      Cache file for process tracker.
 
 sources:
   - precondition:

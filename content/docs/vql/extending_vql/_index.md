@@ -4,6 +4,11 @@ date: 2021-06-27T04:29:26Z
 last_reviewed: 2025-12-30
 draft: false
 weight: 60
+description: |
+  VQL is really a glue language - we rely on VQL plugins and functions
+  to do all the heavy lifting.  VQL was never designed to be an all
+  powerful language - users will hit the limits of what is possible in
+  VQL pretty quickly.
 ---
 
 VQL is really a glue language - we rely on VQL plugins and functions
@@ -264,7 +269,7 @@ the tool to be downloaded from a certain URL (e.g. an S3 bucket).
 As an artifact writer you can specify your artifact will use a certain
 tool and provide a hint of where to download it from.
 
-See [Managing External Tools]({{< ref "/docs/artifacts/tools/" >}}) for more
+See [Managing External Tools](/docs/artifacts/tools/) for more
 information.
 
 ##### Example: The Autoruns artifact

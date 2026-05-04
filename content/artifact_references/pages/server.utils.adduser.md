@@ -1,7 +1,12 @@
 ---
 title: Server.Utils.AddUser
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  This server artifact is used to add new user to the Velociraptor
+  GUI.
 ---
 
 This server artifact is used to add new user to the Velociraptor

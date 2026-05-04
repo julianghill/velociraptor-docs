@@ -1,7 +1,11 @@
 ---
 title: Windows.Detection.Yara.PhysicalMemory
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact enables running YARA over physical memory.
 ---
 
 This artifact enables running YARA over physical memory.

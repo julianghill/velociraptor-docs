@@ -5,7 +5,10 @@ date: 2025-05-16
 last_reviewed: 2025-09-04
 draft: false
 weight: 80
-summary: "Learn about keyboard shortcuts in the GUI"
+summary: Learn about keyboard shortcuts in the GUI
+description: |
+  The Velociraptor GUI supports many keyboard shortcuts to navigate around
+  quicker. So you don't have to be slowed down by mouse clicks!
 ---
 
 The Velociraptor GUI supports many keyboard shortcuts to navigate around
@@ -69,7 +72,7 @@ results.
 
 ### Artifact Editor
 
-These are available in the [artifact editor]({{< ref "/docs/gui/artifacts/" >}})
+These are available in the [artifact editor](/docs/gui/artifacts/)
 and Sigma editor.
 
 The editor uses the ACE (Ajax.org Cloud9 Editor) under the hood. This means that
@@ -95,3 +98,5 @@ deleting multiple clients, multiple artifacts in the artifacts viewer, multiple
 notebooks, and multiple collections from a client.
 
 ![Selecting multiple flows for deletion](multi-select.svg)
+
+![Deleting multiple flows](multi-delete.png)

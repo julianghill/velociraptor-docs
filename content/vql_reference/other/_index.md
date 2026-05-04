@@ -3,6 +3,8 @@ title: Other
 weight: 90
 linktitle: Other
 index: true
+sitemap:
+  disable: true
 no_edit: true
 no_children: true
 ---
@@ -11,6 +13,7 @@ Functions and plugins that do not fall into a specific category or that have
 not yet been categorized.
 |Plugin/Function|<span class='vql_type'>Type</span>|Description|
 |-|-|-|
+|[adx_upload](adx_upload)|<span class='vql_type'>Plugin</span>|Upload rows to Azure Data Explorer (ADX)|
 |[alert](alert)|<span class='vql_type'>Function</span>|Generate an alert message|
 |[all](all)|<span class='vql_type'>Function</span>|Returns TRUE if all items are true|
 |[any](any)|<span class='vql_type'>Function</span>|Returns TRUE if any items are true|
@@ -44,6 +47,9 @@ not yet been categorized.
 |[getpid](getpid)|<span class='vql_type'>Function</span>|Returns the current pid of the Velociraptor process|
 |[help](help)|<span class='vql_type'>Plugin</span>|Dump information about all VQL functions and plugins|
 |[host](host)|<span class='vql_type'>Function</span>|Perform a DNS resolution|
+|[hunt_reindex](hunt_reindex)|<span class='vql_type'>Plugin</span>|Reindex a hunt|
+|[index](index)|<span class='vql_type'>Plugin</span>|Create a local index from a query|
+|[index_search](index_search)|<span class='vql_type'>Plugin</span>|Search a previously created index|
 |[ip](ip)|<span class='vql_type'>Function</span>|Format an IP address|
 |[lazy_dict](lazy_dict)|<span class='vql_type'>Function</span>|Construct a dict from arbitrary keyword args - does not materialize args so it is suitable for building args via `**` expansion|
 |[logscale_upload](logscale_upload)|<span class='vql_type'>Plugin</span>|Upload rows to LogScale ingestion server|
@@ -69,11 +75,13 @@ not yet been categorized.
 |[rand](rand)|<span class='vql_type'>Function</span>|Selects a random number|
 |[rate](rate)|<span class='vql_type'>Function</span>|Calculates the rate (derivative) between two quantities|
 |[read_crypto_file](read_crypto_file)|<span class='vql_type'>Plugin</span>|Read a previously stored encrypted local storage file|
+|[reformat](reformat)|<span class='vql_type'>Function</span>|Reformat VQL|
 |[rekey](rekey)|<span class='vql_type'>Function</span>|Causes the client to rekey and regenerate a new client ID|
 |[remap](remap)|<span class='vql_type'>Function</span>|Apply a remapping configuration to the root scope|
 |[rm](rm)|<span class='vql_type'>Function</span>|Remove a file from the filesystem using the API|
 |[rsyslog](rsyslog)|<span class='vql_type'>Function</span>|Send an RFC5424 compliant remote syslog message|
 |[sample](sample)|<span class='vql_type'>Plugin</span>|Executes 'query' and samples every n'th row|
+|[semver](semver)|<span class='vql_type'>Function</span>|Parse a semantic version string|
 |[serialize](serialize)|<span class='vql_type'>Function</span>|Encode an object as a string|
 |[sigma_log_sources](sigma_log_sources)|<span class='vql_type'>Function</span>|Constructs a Log sources object to be used in sigma rules|
 |[similarity](similarity)|<span class='vql_type'>Function</span>|Compare two Dicts for similarity|
@@ -96,10 +104,13 @@ not yet been categorized.
 |[upload_transactions](upload_transactions)|<span class='vql_type'>Plugin</span>|View the outstanding transactions for uploads|
 |[upload_webdav](upload_webdav)|<span class='vql_type'>Function</span>|Upload files to a WebDAV server|
 |[url](url)|<span class='vql_type'>Function</span>|Construct a URL or parse one|
+|[user_message](user_message)|<span class='vql_type'>Function</span>|Send the user a message which will appear in the user notification view|
+|[user_messages](user_messages)|<span class='vql_type'>Plugin</span>|Emit the user's console messages|
 |[uuid](uuid)|<span class='vql_type'>Function</span>|Generate a UUID|
 |[verify](verify)|<span class='vql_type'>Function</span>|verify an artifact|
 |[version](version)|<span class='vql_type'>Function</span>|Gets the version of a VQL plugin or function|
 |[write_crypto_file](write_crypto_file)|<span class='vql_type'>Plugin</span>|Write a query into an encrypted local storage file|
 |[write_csv](write_csv)|<span class='vql_type'>Plugin</span>|Write a query into a CSV file|
+|[write_file](write_file)|<span class='vql_type'>Function</span>|Writes a string onto a file|
 |[write_jsonl](write_jsonl)|<span class='vql_type'>Plugin</span>|Write a query into a JSONL file|
 |[yarax](yarax)|<span class='vql_type'>Plugin</span>|Scan files using yara rules (Using the new yarax engine)|

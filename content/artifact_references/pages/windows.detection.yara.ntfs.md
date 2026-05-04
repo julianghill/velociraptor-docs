@@ -1,7 +1,12 @@
 ---
 title: Windows.Detection.Yara.NTFS
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact searches the MFT, returns a list of target files then runs YARA
+  over the target list.
 ---
 
 This artifact searches the MFT, returns a list of target files then runs YARA

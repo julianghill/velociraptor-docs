@@ -1,7 +1,11 @@
 ---
 title: Admin.Client.Upgrade.RedHat
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Remotely push new client updates to Red Hat hosts.
 ---
 
 Remotely push new client updates to Red Hat hosts.

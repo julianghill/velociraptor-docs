@@ -1,7 +1,11 @@
 ---
 title: Server.Utils.CreateCollector
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  A utility artifact to create a stand alone collector.
 ---
 
 A utility artifact to create a stand alone collector.
@@ -68,6 +72,7 @@ parameters:
       - SFTP
       - Azure
       - SMBShare
+      - WebDAV
 
   - name: target_args
     description: Type Dependent args
@@ -252,6 +257,18 @@ parameters:
         privatekey=TargetArgs.privatekey,
         endpoint=TargetArgs.endpoint,
         hostkey = TargetArgs.hostkey)
+
+  - name: WebDAVCollection
+    type: hidden
+    default : |
+      LET upload_file(filename, name, accessor) = upload_webdav(
+        file=filename,
+        accessor=accessor,
+        name=name,
+        url=TargetArgs.url,
+        basic_auth_user=TargetArgs.basic_auth_user,
+        basic_auth_password=TargetArgs.basic_auth_password,
+        user_agent=TargetArgs.user_agent)
 
   - name: CommonCollections
     type: hidden
@@ -451,7 +468,7 @@ export: |
         },
         "Target": {
            "description": "The type of collector to use",
-           "enum": ["ZIP", "GCS", "S3", "Azure", "SMBShare", "SFTP"]
+           "enum": ["ZIP", "GCS", "S3", "Azure", "SMBShare", "SFTP", "WebDAV"]
         },
         "EncryptionScheme": {
            "enum": ["None", "X509", "Password", "PGP"],
@@ -615,6 +632,26 @@ export: |
            }
         }
       },
+      { "description": "Target Args for WebDAVCollection",
+        "if": {
+           "properties": { "Target": { "const": "WebDAV" } }
+        },
+        "then": {
+           "properties": {
+              "TargetArgs": {
+                 "type": "object",
+                  "properties": {
+                     "url": {"type": "string"},
+                     "basic_auth_user": {"type": "string"},
+                     "basic_auth_password": {"type": "string"},
+                     "user_agent": {"type": "string"}
+                  },
+                  "additionalProperties": false,
+                  "required": ["url"]
+              }
+           }
+        }
+      },
       { "description": "Target Args for ZIP",
         "if": {
            "properties": { "Target": { "const": "ZIP" } }
@@ -696,6 +733,9 @@ sources:
         f = { SELECT SMBCollection + CommonCollections + CloudCollection AS Value
               FROM scope()
               WHERE target = "SMBShare" },
+        g = { SELECT WebDAVCollection + CommonCollections + CloudCollection AS Value
+              FROM scope()
+              WHERE target = "WebDAV" },
         z = { SELECT "" AS Value  FROM scope()
               WHERE log(message="Unknown collection type " + target) }
       )

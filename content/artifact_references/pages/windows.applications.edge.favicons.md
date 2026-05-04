@@ -1,7 +1,11 @@
 ---
 title: Windows.Applications.Edge.Favicons
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Enumerate the user's Microsoft Edge favicons.
 ---
 
 Enumerate the user's Microsoft Edge favicons.

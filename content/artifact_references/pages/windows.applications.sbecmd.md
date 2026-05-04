@@ -1,7 +1,11 @@
 ---
 title: Windows.Applications.SBECmd
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Execute Eric Zimmerman's SBECmd and return output for analysis.
 ---
 
 Execute Eric Zimmerman's SBECmd and return output for analysis.
@@ -123,7 +127,7 @@ sources:
            condition=UploadFiles,
            then={
              SELECT Name, upload(file=OSPath,
-                                 name=relpath(base=tempfile, path=OSPath)) as FileDetails
+                                 name=relpath(base=tempfolder, path=OSPath)) as FileDetails
              FROM glob(globs="/**", root=tempfolder)
            })
       },

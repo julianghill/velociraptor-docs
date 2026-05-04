@@ -1,7 +1,11 @@
 ---
 title: Windows.Forensics.PartitionTable
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Parses the raw disk for partition tables.
 ---
 
 Parses the raw disk for partition tables.

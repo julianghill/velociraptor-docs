@@ -1,7 +1,11 @@
 ---
 title: Windows.Detection.BinaryHunter
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact enables hunting for binary attributes.
 ---
 
 This artifact enables hunting for binary attributes.

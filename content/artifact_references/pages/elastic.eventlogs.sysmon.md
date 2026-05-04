@@ -1,7 +1,11 @@
 ---
 title: Elastic.EventLogs.Sysmon
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Ships the the Sysmon event log in ECS schema.
 ---
 
 Ships the the Sysmon event log in ECS schema.

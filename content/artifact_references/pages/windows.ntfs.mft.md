@@ -1,7 +1,11 @@
 ---
 title: Windows.NTFS.MFT
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Parses $MFT files and returns rows of each in scope MFT record.
 ---
 
 Parses $MFT files and returns rows of each in scope MFT record.

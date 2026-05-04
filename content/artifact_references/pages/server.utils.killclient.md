@@ -1,7 +1,11 @@
 ---
 title: Server.Utils.KillClient
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  This artifact aggressively kills a client.
 ---
 
 This artifact aggressively kills a client.

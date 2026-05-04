@@ -1,7 +1,11 @@
 ---
 title: Server.Alerts.TheHive.Case
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Event Artifact]
+description: |
+  Creates a TheHive case when monitored artifacts complete with results.
 ---
 
 Creates a TheHive case when monitored artifacts complete with results.

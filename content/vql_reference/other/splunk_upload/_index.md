@@ -2,7 +2,11 @@
 title: splunk_upload
 index: true
 noTitle: true
+sitemap:
+   disable: true
 no_edit: true
+description: |
+  Upload rows to splunk.
 ---
 
 
@@ -34,6 +38,9 @@ hostname|Hostname for Splunk Events. Defaults to server hostname.|string
 timestamp_field|Field to use as event timestamp.|string
 hostname_field|Field to use as event hostname. Overrides hostname parameter.|string
 secret|Alternatively use a secret from the secrets service. Secret must be of type 'Splunk'|string
+max_retries|Maximum number of retries for failed uploads (default: 3).|int64
+retry_wait|Base wait time in seconds for exponential backoff between retries (default: 2). Actual wait times: 2s, 4s, 8s, 16s...|int64
+idle_conn_timeout|How long to keep idle HTTP connections open in seconds (default: 55). Lower values help with firewalls/load balancer/HECs that close connections.|int64
 
 <span class="permission_list vql_type">Required permissions:</span><span class="permission_list linkcolour label label-important">NETWORK</span>
 

@@ -1,7 +1,11 @@
 ---
 title: Windows.ETW.EdgeURLs
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Event Artifact]
+description: |
+  Collects all URLs accessed by the Edge browser using ETW.
 ---
 
 Collects all URLs accessed by the Edge browser using ETW.

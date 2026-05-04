@@ -6,13 +6,17 @@ weight: 50
 date: 2025-02-27
 last reviewed: 2025-04-27
 summary: "How to upgrade your server."
+description: |
+  Upgrading the server component is usually a simple matter of creating a new
+  server installation package using the latest version and your existing
+  configuration file, and then applying it to your server.
 ---
 
 Upgrading the server component is usually a simple matter of creating a new
 server installation package using the latest version and your existing
 configuration file, and then applying it to your server.
 
-{{% notice note "Backing up your configuration file" %}}
+{{% notice tip "Backing up your configuration file" %}}
 
 The configuration file contains cryptographic keys that allow clients
 and server to communicate. Each time the configuration is regenerated
@@ -38,10 +42,26 @@ into the server package so you will receive an upgraded configuration file
 installed to the `/etc/` directory. You can see the version that wrote the
 configuration file in the `version` section of the configuration file.
 
+{{% notice note "Client-Server Backward Compatibility" %}}
+
+The Velociraptor server is intended to be
+[backwardly-compatible with older clients](/docs/overview/support/#client-and-server-versioning)
+across the previous few releases, which allows you to upgrade the server and
+then upgrade the clients. This backward-compatibility is mainly in terms of
+client-server communication - that is, older clients should be able to continue
+communicating with a newer server version. However, older clients will not be
+able to run artifacts that use newer features and functionality, so ideally you
+should try to upgrade your clients to the same version as the server as soon as
+possible after upgrading the server.
+
+Note that you should always upgrade the server first.
+
+{{% /notice %}}
+
 ## Upgrading a server (in-place upgrade)
 
 To upgrade the Velociraptor server to a new version, first download the
-[latest release binary]({{< ref "/downloads/" >}}),
+[latest release binary](/downloads/),
 appropriate for your server's architecture.
 
 ### Create a new server installation package
@@ -147,7 +167,7 @@ an old server to a new server by using a remote client upgrade.
    notebooks, etc. as on the old server. You can restore the latest daily backup
    from the old server to preserve various server configuration items, as
    described in
-   [Restoring from daily backups]({{< ref "/knowledge_base/tips/backing_up/#restoring-from-daily-backups" >}}).
+   [Restoring from daily backups](/knowledge_base/tips/backing_up/#restoring-from-daily-backups).
 
 3. Export the appropriate client config from the new server. Copy it to the old
    server. Use the `Server.Utils.CreateMSI` or

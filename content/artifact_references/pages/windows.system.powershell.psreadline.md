@@ -1,7 +1,11 @@
 ---
 title: Windows.System.Powershell.PSReadline
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This Artifact will search and extract lines from PSReadline history file.
 ---
 
 This Artifact will search and extract lines from PSReadline history file.

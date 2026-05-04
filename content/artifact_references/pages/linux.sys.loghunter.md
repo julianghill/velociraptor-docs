@@ -1,7 +1,11 @@
 ---
 title: Linux.Sys.LogHunter
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Allows grep-like searching of Linux, MacOS and Windows logs.
 ---
 
 Allows grep-like searching of Linux, MacOS and Windows logs.

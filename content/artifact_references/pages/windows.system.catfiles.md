@@ -1,7 +1,14 @@
 ---
 title: Windows.System.CatFiles
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Windows stores many hashes in .cat files. These catalog files
+  contain a set of trusted hashes for drivers and other binaries,
+  even if the PE files do not themselves contain Authenticode
+  signatures.
 ---
 
 Windows stores many hashes in .cat files. These catalog files

@@ -1,7 +1,11 @@
 ---
 title: Windows.Search.SMBFileFinder
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Find files on a remote filesystem using the filename or content.
 ---
 
 Find files on a remote filesystem using the filename or content.

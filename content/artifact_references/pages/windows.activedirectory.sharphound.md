@@ -1,7 +1,11 @@
 ---
 title: Windows.ActiveDirectory.SharpHound
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact allows deployment of the BloodHound collection tool Sharphound.
 ---
 
 This artifact allows deployment of the BloodHound collection tool Sharphound.

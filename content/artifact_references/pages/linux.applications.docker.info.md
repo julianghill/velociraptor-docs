@@ -1,7 +1,11 @@
 ---
 title: Linux.Applications.Docker.Info
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Get Dockers info by connecting to its socket.
 ---
 
 Get Dockers info by connecting to its socket.

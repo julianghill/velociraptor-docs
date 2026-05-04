@@ -1,7 +1,11 @@
 ---
 title: Windows.Forensics.UserAccessLogs
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Parse and collect the SUM database
 ---
 
 Parse and collect the SUM database

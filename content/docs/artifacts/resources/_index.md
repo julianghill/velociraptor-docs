@@ -6,6 +6,12 @@ draft: false
 weight: 130
 summary: "How to limit an artifact's resource usage"
 last_reviewed: 2025-05-18
+description: |
+  Velociraptor often runs on performance sensitive endpoints, like
+  servers and laptops, as well as low resource machines like cloud
+  virtual machines. It is critical to ensure that Velociraptor does not
+  generate undue load on the endpoint, leading to performance
+  degradation.
 ---
 
 Velociraptor often runs on performance sensitive endpoints, like
@@ -97,7 +103,7 @@ timeout is reached, the collection is timed out and cancelled.
     default. Normally this should be more than sufficient for any reasonable
     notebook query, but in rare cases if you need to set this to a longer
     interval you can do so via
-    [a config setting]({{< ref "/docs/deployment/references/#defaults.notebook_cell_timeout_min" >}})
+    [a config setting](/docs/deployment/references/#defaults.notebook_cell_timeout_min)
     (which requires a server restart).
 
 ## Resource Limits
@@ -149,11 +155,10 @@ consume.**
 
 ## Limiting Memory Use
 
-It is not possible to limit memory usage via artifacts. However there
-is a [setting]({{< ref
-"/docs/deployment/references/#Client.max_memory_hard_limit" >}}) that
-implements a hard limit for clients. If the memory usage exceeds the
-limit the client will hard exit. If it is installed as a Windows
+It is not possible to limit memory usage via artifacts. However there is a
+[setting](/docs/deployment/references/#Client.max_memory_hard_limit)
+that implements a hard limit for clients. If the memory usage exceeds
+the limit the client will hard exit. If it is installed as a Windows
 service then the service recovery option should restart the client
 automatically.
 

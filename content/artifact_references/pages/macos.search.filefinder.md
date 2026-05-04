@@ -1,7 +1,11 @@
 ---
 title: MacOS.Search.FileFinder
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Find files on the filesystem using the filename or content.
 ---
 
 Find files on the filesystem using the filename or content.
@@ -114,8 +118,9 @@ parameters:
 
   - name: UPLOAD_IS_RESUMABLE
     type: bool
-    default: Y
-    description: If set the uploads can be resumed if the flow times out or errors.
+    default: N
+    description: |
+      If set the uploads can be resumed if the flow times out or errors.
 
 sources:
 - query: |

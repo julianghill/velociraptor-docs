@@ -1,7 +1,12 @@
 ---
 title: Windows.Registry.NTUser
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact searches for keys or values within the user's
+  NTUser.dat registry hives.
 ---
 
 This artifact searches for keys or values within the user's

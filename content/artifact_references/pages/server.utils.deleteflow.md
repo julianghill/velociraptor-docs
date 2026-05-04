@@ -1,7 +1,12 @@
 ---
 title: Server.Utils.DeleteFlow
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  This artifact permanently deletes a flow including it's metadata and
+  uploaded files.
 ---
 
 This artifact permanently deletes a flow including it's metadata and

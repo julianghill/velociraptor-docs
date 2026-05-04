@@ -1,7 +1,11 @@
 ---
 title: Windows.Search.Yara
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Searches for a specific malicious file or set of files by a YARA rule.
 ---
 
 Searches for a specific malicious file or set of files by a YARA rule.

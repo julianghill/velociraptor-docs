@@ -1,7 +1,11 @@
 ---
 title: Linux.Network.PacketCapture
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact uses tcpdump to natively capture packets.
 ---
 
 This artifact uses tcpdump to natively capture packets.

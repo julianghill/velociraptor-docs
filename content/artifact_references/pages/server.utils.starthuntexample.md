@@ -1,7 +1,13 @@
 ---
 title: Server.Utils.StartHuntExample
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  This example artifact shows how to create a utility artifact to
+  provide low privileged users with a controlled ability to perform
+  high privileged operations.
 ---
 
 This example artifact shows how to create a utility artifact to

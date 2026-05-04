@@ -1,7 +1,11 @@
 ---
 title: Windows.Analysis.EvidenceOfDownload
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Simple artifact to find evidence of user download activity.
 ---
 
 Simple artifact to find evidence of user download activity.

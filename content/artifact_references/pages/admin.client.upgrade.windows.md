@@ -1,7 +1,11 @@
 ---
 title: Admin.Client.Upgrade.Windows
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Remotely push new client updates.
 ---
 
 Remotely push new client updates.

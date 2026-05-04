@@ -1,7 +1,12 @@
 ---
 title: Windows.Applications.OfficeMacros
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Scans through a given directory glob for common office files. Then tries to
+  extract any embedded macros by parsing the OLE file structure.
 ---
 
 Scans through a given directory glob for common office files. Then tries to

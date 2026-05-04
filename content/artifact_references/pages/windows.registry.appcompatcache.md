@@ -1,7 +1,11 @@
 ---
 title: Windows.Registry.AppCompatCache
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact parses AppCompatCache (shimcache) from target hives.
 ---
 
 This artifact parses AppCompatCache (shimcache) from target hives.

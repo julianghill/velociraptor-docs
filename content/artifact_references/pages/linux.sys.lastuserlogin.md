@@ -1,7 +1,11 @@
 ---
 title: Linux.Sys.LastUserLogin
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  Finds and parses system WTMP files.
 ---
 
 Finds and parses system WTMP files.

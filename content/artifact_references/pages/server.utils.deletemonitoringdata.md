@@ -1,7 +1,11 @@
 ---
 title: Server.Utils.DeleteMonitoringData
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  Velociraptor collects monitoring data from endpoints all the time.
 ---
 
 Velociraptor collects monitoring data from endpoints all the time.
@@ -79,8 +83,13 @@ sources:
                timestamp(epoch=split(string=OSPath.Basename, sep="\\.")[0]) AS Timestamp,
                if(condition=ReallyDoIt, then=file_store_delete(path=OSPath)) AS ReallyDoIt
         FROM glob(
-          globs="/**.json*", accessor="fs",
-          root="/clients/"+ ClientId + "/monitoring")
+          globs=[
+            "/monitoring/**.json*",
+            "/monitoring_logs/**.json*"
+          ],
+          accessor="fs",
+          root="/clients/" + ClientId
+        )
         WHERE ArtifactName =~ ArtifactRegex
           AND Timestamp &lt; DateBefore
       }, workers=10)

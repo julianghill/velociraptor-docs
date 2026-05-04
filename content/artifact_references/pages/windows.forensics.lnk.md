@@ -1,7 +1,11 @@
 ---
 title: Windows.Forensics.Lnk
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact parses LNK shortcut files.
 ---
 
 This artifact parses LNK shortcut files.

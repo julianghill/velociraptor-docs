@@ -1,7 +1,13 @@
 ---
 title: Windows.Carving.CobaltStrike
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact extracts Cobalt Strike configuration from a byte stream, process
+  or file on disk such as a process dump. Best used as a triage step against a
+  detection of a Cobalt Strike beacon via a YARA process scan.
 ---
 
 This artifact extracts Cobalt Strike configuration from a byte stream, process
@@ -398,10 +404,10 @@ export: |
     [Shellcode, 0, [
         ["__Position", 0, "Value",{"value":"x=&gt;unhex(string=position(data=_Data))"}],
         ["Server", 0, "Value",{"value":"x=&gt;regex_replace(source=regex_replace(source=x.__Position,re='\\x{00}.{4}[^$]*$',replace=''),re='\u0000',replace='')"}],
-        ["TargetUri", 0, "Value",{"value":"x=&gt;find_strings(data=_Data,length=5,filter='^/').Strings[0]"}],
+        ["TargetUri", 0, "Value",{"value":"x=&gt;find_strings(data=_Data, length=5, filterRegex='^/').Strings[0]"}],
         ["__LicenseBytes", 0, "Value",{"value":"x=&gt;read_file(accessor='data',filename=x.__Position || '', offset=len(list=x.Server) + 1 ,length=4)"}],
         ["License", 0, "Value",{"value":"x=&gt;parse_binary(accessor='data', filename=x.__LicenseBytes,struct='uint32b')"}],
-        ["Strings", 0, "Value",{"value":"x=&gt;find_strings(data=_Data,length=5,filter='.').Strings"}],
+        ["Strings", 0, "Value",{"value":"x=&gt;find_strings(data=_Data, length=5, filterRegex='.').Strings"}],
     ]],
 
     ["EmbeddedPE", 0, [
@@ -669,10 +675,10 @@ sources:
       LET position(data) = if(condition= len(list=split(string=format(format='%x',args=data),sep='ffff')) &gt; 1,
             then= split(string=format(format='%x',args=data),sep='ffff')[-1],
             else= False )
-      LET find_strings(data,length,filter) = SELECT Strings
+      LET find_strings(data,length, filterRegex) = SELECT Strings
         FROM parse_records_with_regex(file=data,accessor='data',regex='(?P&lt;Strings&gt;[ -~]+)')
         WHERE len(list=Strings) &gt; length - 1
-            AND Strings =~ filter
+            AND Strings =~ filterRegex
             AND NOT Strings =~ '^\\s+$'
         LIMIT 150
 

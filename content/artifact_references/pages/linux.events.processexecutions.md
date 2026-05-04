@@ -1,7 +1,11 @@
 ---
 title: Linux.Events.ProcessExecutions
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Event Artifact]
+description: |
+  This artifact collects process execution logs from the Linux kernel.
 ---
 
 This artifact collects process execution logs from the Linux kernel.

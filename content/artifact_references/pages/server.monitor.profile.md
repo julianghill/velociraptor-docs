@@ -1,7 +1,13 @@
 ---
 title: Server.Monitor.Profile
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  This artifact collects profiling information from the running
+  server. This is useful when you notice a high CPU load in the server
+  and want to know why.
 ---
 
 This artifact collects profiling information from the running

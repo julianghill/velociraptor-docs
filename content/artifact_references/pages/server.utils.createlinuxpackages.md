@@ -1,7 +1,11 @@
 ---
 title: Server.Utils.CreateLinuxPackages
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  Build Deb and RPM packages ready for deployment in the current org.
 ---
 
 Build Deb and RPM packages ready for deployment in the current org.
@@ -45,6 +49,8 @@ parameters:
     type: yaml
   - name: ServiceName
     description: Customize the service name
+  - name: Release
+    description: Customize the release version
   - name: Maintainer
     description: Customize the maintainer
   - name: MaintainerEmail
@@ -78,8 +84,8 @@ sources:
        {"Name": "{{ .SysvService }}",
         "Vendor": "%v",
         "Version": "{{ .Version }}",
-        "Release": "{{ .Release}}",
-        "Arch": "{{.Arch}}",
+        "Release": "{{ .Release }}",
+        "Arch": "{{ .Arch }}",
         "BuildTime": "%v"
        }
        ''', args=[Vendor, timestamp(epoch=now())])))
@@ -89,6 +95,7 @@ sources:
 
     LET UpdateExpansion(Expansion) = Expansion + dict(
        Name=ServiceName || Expansion.Name,
+       Release=Release || Expansion.Release,
        SysvService=ServiceName || Expansion.SysvService,
        Maintainer=Maintainer || Expansion.Maintainer,
        MaintainerEmail=MaintainerEmail || Expansion.MaintainerEmail,
@@ -110,6 +117,7 @@ sources:
         directory_name=TmpDir,
         package_spec=RPMSpec +
             dict(Expansion=UpdateExpansion(Expansion=RPMSpec.Expansion)),
+        release=Release || RPMSpec.Expansion.Release,
         config=serialize(item=client_config, format="yaml"))
     })
 

@@ -1,7 +1,12 @@
 ---
 title: Linux.Detection.Yara.Glob
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact returns a list of target files then runs YARA over the target
+  list.
 ---
 
 This artifact returns a list of target files then runs YARA over the target

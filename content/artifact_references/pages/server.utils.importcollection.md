@@ -1,7 +1,14 @@
 ---
 title: Server.Utils.ImportCollection
 hidden: true
+sitemap:
+  disable: true
 tags: [Server Artifact]
+description: |
+  The Velociraptor offline collector is an automated, preconfigured
+  collection tool. Users can use the collector to automatically
+  collect any artifacts on endpoints that do not have the Velociraptor
+  client (offline endpoints).
 ---
 
 The Velociraptor offline collector is an automated, preconfigured

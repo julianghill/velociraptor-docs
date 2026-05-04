@@ -6,6 +6,8 @@ last_reviewed: 2025-07-06
 draft: false
 weight: 120
 summary: All other commands not previously covered.
+description: |
+  All other commands not previously covered.
 ---
 
 All other commands not previously covered.
@@ -96,10 +98,10 @@ Args:
 
 ##### See also
 
-- [[ fuse container ]]({{< ref "/docs/cli/fuse/" >}}),
+- [[ fuse container ]](/docs/cli/fuse/),
   which allows you to mount collection containers instead of extracting them.
 
-- [[ unzip ]]({{< relref "#-unzip-" >}}), which works similarly to `decrypt`
+- [[ unzip ]](#-unzip-), which works similarly to `decrypt`
   but lists filenames or extracts the files from a collection container.
 
 ----
@@ -150,7 +152,7 @@ gui [<flags>]
 ```
 
 For more information, see
-[Deployment > Instant Velociraptor]({{< ref "/docs/deployment/#instant-velociraptor" >}}).
+[Deployment > Instant Velociraptor](/docs/deployment/#instant-velociraptor).
 
 ----
 
@@ -256,10 +258,10 @@ Args:
 
 ##### See also
 
-- [[ decrypt ]]({{< relref "#-decrypt-" >}}), which removes the encryption from collection containers without
+- [[ decrypt ]](#-decrypt-), which removes the encryption from collection containers without
   extracting the collection's files.
 
-- [[ fuse container ]]({{< ref "/docs/cli/fuse/" >}}),
+- [[ fuse container ]](/docs/cli/fuse/),
   which allows you to mount collection containers instead of extracting them.
 
 ----

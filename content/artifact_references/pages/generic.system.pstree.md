@@ -1,7 +1,12 @@
 ---
 title: Generic.System.Pstree
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact displays the call chain for every process on the
+  system by traversing the process's parent ID.
 ---
 
 This artifact displays the call chain for every process on the

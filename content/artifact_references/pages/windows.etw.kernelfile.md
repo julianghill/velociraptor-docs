@@ -1,7 +1,11 @@
 ---
 title: Windows.ETW.KernelFile
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Event Artifact]
+description: |
+  This artifact follows the Microsoft-Windows-Kernel-File provider.
 ---
 
 This artifact follows the Microsoft-Windows-Kernel-File provider.

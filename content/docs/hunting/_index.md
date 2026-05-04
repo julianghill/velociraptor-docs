@@ -6,6 +6,9 @@ draft: false
 weight: 40
 aliases:
   - "/docs/gui/hunting/"
+description: |
+  With Velociraptor, you can collect the same artifact from multiple
+  endpoints at the same time using a **Hunt**.
 ---
 
 With Velociraptor, you can collect the same artifact from multiple
@@ -163,7 +166,7 @@ client.
 
 Note that I can use this technique to automatically schedule clients
 into various hunts using the VQL
-[label()]({{< ref "/vql_reference/server/label/" >}}) function. Therefore I can use
+[label()](/vql_reference/server/label/) function. Therefore I can use
 this technique to automatically add clients to various hunts based on
 previous findings.
 
@@ -195,7 +198,7 @@ flexibility in managing hunt membership.
 A common example is when a collection needs to be redone for some
 reason. Normally the hunt manager ensures only a single collection
 from the hunt is scheduled on the same client. However sometimes the
-collection fails, or simply needs to be recollected for fresher
+collection fails, or simply needs to be re-collected for fresher
 data to be added to the hunt.
 
 Using the `Windows.Triage.Targets` collection created by the above example, we
@@ -220,7 +223,7 @@ to keep the old collection around or just delete it.
 ![Hunt with additional collection](manual_hunt_3.svg)
 
 You can add collections to a hunt using the
-[hunt_add()]({{< ref "/vql_reference/server/hunt_add/" >}}) VQL function which
+[hunt_add()](/vql_reference/server/hunt_add/) VQL function which
 allows unlimited automation around which flows are added to a hunt (and it
 can also be used to automate the relaunching of the collections).
 

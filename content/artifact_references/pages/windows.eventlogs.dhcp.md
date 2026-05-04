@@ -1,7 +1,12 @@
 ---
 title: Windows.EventLogs.DHCP
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact parses the Windows DHCP event log looking for evidence
+  of IP address assignments.
 ---
 
 

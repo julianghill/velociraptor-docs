@@ -1,7 +1,11 @@
 ---
 title: Windows.System.WMIQuery
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact enables querying Windows Management Instrumentation (WMI).
 ---
 
 This artifact enables querying Windows Management Instrumentation (WMI).

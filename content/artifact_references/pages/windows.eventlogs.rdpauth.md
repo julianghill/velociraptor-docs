@@ -1,7 +1,12 @@
 ---
 title: Windows.EventLogs.RDPAuth
 hidden: true
+sitemap:
+  disable: true
 tags: [Client Artifact]
+description: |
+  This artifact will extract Event Logs related to Remote Desktop sessions,
+  logon and logoff.
 ---
 
 This artifact will extract Event Logs related to Remote Desktop sessions,
